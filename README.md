@@ -3,7 +3,7 @@
 ## Description
 
 This application implements a simple command line based storefront. 
-It uses two mpm packages.   
+It uses two npm packages.   
 1. NPM Inquier package. 
 2. The NPM MySQL.
 
