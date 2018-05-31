@@ -37,7 +37,7 @@ function displayInventory(){
                 console.log("");
                 console.log(("Stock Quantity: " + res[i].stock_quantity).yellow);
                 console.log("");
-                console.log(( "Price: " + res[i].price).yellow);
+                console.log(( "Price: $ " + res[i].price).yellow);
                 console.log("");
                 console.log("____________________________________".blue);
 
@@ -47,7 +47,7 @@ function displayInventory(){
         });
 
 }
-// Shopper selects the product hey want to buy
+// Shopper selects the product they want to buy
 // Shopper chooses how many they want to buy
 function selectProduct() {
     inquirer.prompt(
@@ -68,6 +68,7 @@ function selectProduct() {
                 message: "Hou many would you like to buy?",
             }).then(function(response){
                 if (response.productQuantity < res[0].stock_quantity){
+                    console.log("");
                     console.log("____________________________________".blue);
                     console.log("");
                     console.log(("You would like to buy " + response.productQuantity).yellow);
@@ -79,10 +80,9 @@ function selectProduct() {
                     console.log(("Price: $" + response.productQuantity * res[0].price + ".00").yellow);
                     console.log("");
 
-
                 }
                 else {
-                    console.log(("Insuficient stock").yellow);
+                    console.log(("Insufficient stock").yellow);
                     
                 }
 
